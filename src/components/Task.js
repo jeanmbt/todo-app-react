@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import TaskForm from './TaskForm';
 
 function Task({tasks, completeTask}) {
   const [edit, setEdit] = useState({
