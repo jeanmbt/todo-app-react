@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-
+import TaskList from '../components/TaskList';
 
 export const Page = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Title = styled.h1`
   display: block;
 `;
 
-export const TaskList = styled.div`
+export const StyledTaskList = styled(TaskList)`
   display: flex;
   justify-content: center;
   align-items: center;
