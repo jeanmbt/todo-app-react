@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import Task from './Task';
-import TaskForm from './TaskForm';
+import { StyledTaskList } from './taskList.style';
+import Task from '../Tasks/Task';
+import TaskForm from '../TaskForm';
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -29,13 +30,13 @@ function TaskList() {
   
 
   return (
-    <div>
+    <StyledTaskList>
       <TaskForm onSubmit={addTask}/>
       <Task 
         tasks={tasks}
         completeTask={completeTask}
       />
-    </div>
+    </StyledTaskList>
   )
 }
 

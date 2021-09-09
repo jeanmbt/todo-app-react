@@ -1,16 +1,10 @@
 import React from 'react';
-import TaskList from './components/TaskList';
-import { Title, Page, StyledTaskList } from "./styles/styles";
+import Home from './pages';
 // import TaskList from  "./styles/styles"
 
 function App() {
   return (
-    <Page>
-      <Title>Title</Title>
-      <StyledTaskList/>
-
-      
-    </Page>
+    <Home/>
   );
 }
 
