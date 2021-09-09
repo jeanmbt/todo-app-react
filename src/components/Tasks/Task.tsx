@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
+import { StyledTask } from './tasks.style';
 
-function Task({tasks, completeTask}) {
+const Task = ({tasks, completeTask}) => {
   const [edit, setEdit] = useState({
     id: null,
     value: '',
   })
 
   return tasks.map((task, index) => (
-    <form 
-      className={task.id}
+    <StyledTask
+      className={`task-${task.id}-container`}
       key={index}
     >
       <input 
@@ -25,28 +26,9 @@ function Task({tasks, completeTask}) {
       >
         {task.text}
       </label>
-    </form>
+    </StyledTask>
   ))
 }
   
 
 export default Task
-
-
-// class Task extends Component {
-
-// handleClick = () => {
-//   this.props.done = !this.props.done; 
-// }
-//   render() {
-//     return (
-//       <div
-//         className={`task ${this.props.done ? 'task-done' : ' '}`}>
-//         <input type="checkbox" id="task" name="task"/>
-//         something like checkedAttr={this.state.checkedAttr} for the checked or use font awesome React Icons with square and square-check (than you can do it with animations)
-
-//         <label htmlFor="task">task task task </label>
-//       </div>
-//     )
-//   }
-// }

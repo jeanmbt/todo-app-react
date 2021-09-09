@@ -7,7 +7,6 @@ function TaskList() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = task => {
-    // return nothing if empty
     if (!task.text || /^\s*$/.test(task.text)) {
       return
     }
@@ -15,7 +14,6 @@ function TaskList() {
     const newTasks = [task, ...tasks]
 
     setTasks(newTasks)
-    // console.log(...tasks)
   }
 
   const completeTask = id => {
@@ -30,7 +28,7 @@ function TaskList() {
   
 
   return (
-    <StyledTaskList>
+    <StyledTaskList className="list-body">
       <TaskForm onSubmit={addTask}/>
       <Task 
         tasks={tasks}
@@ -41,27 +39,3 @@ function TaskList() {
 }
 
 export default TaskList
-
-
-// import Task from './task'; 
-
-// const TaskList = (props) => {
-//   const renderList = () => {
-//     return props.tasks.map((task, index) => {
-//       <Task
-//         id={task.id}
-//         key={task.key}
-//         index={index}
-//         done={task.done}
-//       />
-//     })
-//   }
-
-//   return (
-//     <TaskList>
-//       {renderList()}
-//     </TaskList>
-//   )
-// };
-
-// export default TaskList

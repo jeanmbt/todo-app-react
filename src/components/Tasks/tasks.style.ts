@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledTask = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 13em;
+  margin: 0.5em 0.5em 0.5em 0;
+  padding: 0.2em 0.2em 0.2em 0;
+  overflow-wrap: anywhere;
 `; 
+

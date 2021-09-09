@@ -16,6 +16,3 @@ export const Title = styled.h1`
 `;
 
 
-export const TaskItem = styled.div`
-  flex-direction: row;
-`; 

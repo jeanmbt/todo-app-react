@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function TaskForm(props) {
+const TaskForm = (props) => {
   const [input, setInput] = useState('')
 
   const handleChange = event => {
@@ -17,17 +17,33 @@ function TaskForm(props) {
     setInput("");
   };
 
+  const inputWidth = {
+    "width": "16em",
+    "border": '0',
+    "border-bottom": '1px solid #e5e5e5',
+    "color": 'black',
+  };
+  
+  const onFocusChange = () => {
+
+  };
+
   return (
     <form className="task-form" onSubmit={handleSubmit}>
       <input 
+        style={inputWidth}
         type='text' 
         placeholder="add new task"
         value={input}
         name='text'
         className='task-input'
-        onChange={handleChange}>
+        onChange={handleChange}
+        onFocus={onFocusChange}
+        maxLength={40}
+        >
       </input>
-      {/* <button className='task-button' onSubmit={handleSubmit}>Add Task</button> */}
+      <button className='task-button' onSubmit={handleSubmit}>Add Task</button>
+      {/* <submitButton className='task-button' onSubmit={handleSubmit}>Add Task </submitButton> */}
     </form>
   )
 }
