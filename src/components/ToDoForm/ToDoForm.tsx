@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const TaskForm = (props) => {
+const ToDoForm = (props) => {
   const [input, setInput] = useState('')
 
   const handleChange = event => {
@@ -29,23 +29,23 @@ const TaskForm = (props) => {
   };
 
   return (
-    <form className="task-form" onSubmit={handleSubmit}>
+    <form className="todo-form" onSubmit={handleSubmit}>
       <input 
         style={inputWidth}
         type='text' 
-        placeholder="add new task"
+        placeholder="add new todo"
         value={input}
         name='text'
-        className='task-input'
+        className='todo-input'
         onChange={handleChange}
         onFocus={onFocusChange}
         maxLength={40}
         >
       </input>
-      <button className='task-button' onSubmit={handleSubmit}>Add Task</button>
+      <button onSubmit={handleSubmit}>Add Task</button>
       {/* <submitButton className='task-button' onSubmit={handleSubmit}>Add Task </submitButton> */}
     </form>
   )
 }
 
-export default TaskForm
+export default ToDoForm

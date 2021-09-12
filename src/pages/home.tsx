@@ -1,15 +1,15 @@
 import React from 'react'
-import TaskList from '../components/TaskList'
+import ToDoList from '../components/ToDoList'
 import { Page, Title } from '../styles/styles'
-import submitButton from '../components/submitButton'
 
-function home() {
+
+function Home() {
   return (
     <Page className="home">
       <Title>Title</Title>
-      <TaskList/>
+      <ToDoList/>
     </Page>
   )
 }
 
-export default home
+export default Home

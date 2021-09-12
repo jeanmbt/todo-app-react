@@ -4,7 +4,7 @@ import { StyledTitle } from './Title.style'
 
 function Title() {
   return (
-    <StyledTitle className="title"/>
+    <StyledTitle/>
       
   )
 }
