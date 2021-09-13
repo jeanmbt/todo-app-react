@@ -27,13 +27,25 @@ function ToDoList() {
   }
   
 
+  // const isComplete = false;
+  
   return (
+
     <StyledToDoList className="list-body">
+
       <ToDoForm onSubmit={addToDo}/>
-      <ToDo
-        toDos={toDos}
-        completeToDo={completeToDo}
-      />
+
+      {toDos.map((toDo, index) => (
+        <ToDo
+          isComplete={ toDo.isComplete == null ? false : toDo.isComplete }
+          toDo={toDo}
+          completeToDo={completeToDo}
+          key={index}
+
+
+        />
+      ))}
+      
     </StyledToDoList>
   )
 }
