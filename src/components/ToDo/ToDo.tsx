@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { StyledToDo } from './ToDo.style';
-import CheckBox from '../checkBox';
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 
 const ToDo = ({toDo, completeToDo, isComplete}) => {
@@ -15,8 +14,6 @@ const ToDo = ({toDo, completeToDo, isComplete}) => {
       onClick={() => completeToDo(toDo.id)}>
         {isComplete ? <MdCheckBox /> : <MdCheckBoxOutlineBlank/>}
         {toDo.text}
-
-
     </StyledToDo>
   )
 }
