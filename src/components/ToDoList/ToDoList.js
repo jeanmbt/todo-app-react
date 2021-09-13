@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { StyledTaskList } from './toDoList.style';
+import { StyledToDoList } from './toDoList.style';
 import ToDo from '../ToDo/ToDo';
 import ToDoForm from '../ToDoForm';
 
 function ToDoList() {
-  const [toDos, setTasks] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
   const addToDo = toDo => {
     if (!toDo.text || /^\s*$/.test(toDo.text)) {
@@ -13,7 +13,7 @@ function ToDoList() {
 
     const newToDos = [toDo, ...toDos]
 
-    setTasks(newToDos)
+    setToDos(newToDos)
   }
 
   const completeToDo = id => {
@@ -23,18 +23,18 @@ function ToDoList() {
       }
       return toDo
     })
-    setTasks(updatedToDos)
+    setToDos(updatedToDos)
   }
   
 
   return (
-    <StyledTaskList className="list-body">
+    <StyledToDoList className="list-body">
       <ToDoForm onSubmit={addToDo}/>
       <ToDo
-        toDo={toDos}
+        toDos={toDos}
         completeToDo={completeToDo}
       />
-    </StyledTaskList>
+    </StyledToDoList>
   )
 }
 

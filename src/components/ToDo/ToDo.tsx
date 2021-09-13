@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { StyledToDo } from './tasks.style';
+import { StyledToDo } from './ToDo.style';
+import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 
 const ToDo = ({toDos, completeToDo}) => {
   const [edit, setEdit] = useState({
@@ -8,7 +9,7 @@ const ToDo = ({toDos, completeToDo}) => {
   })
 
   return toDos.map((toDo, index) => (
-    <StyledTask
+    <StyledToDo
       key={index}
     >
       <input 
@@ -25,7 +26,9 @@ const ToDo = ({toDos, completeToDo}) => {
       >
         {toDo.text}
       </label>
-    </StyledTask>
+      {/* MdCheckBox
+      MdCheckBoxOutlineBlank */}
+    </StyledToDo>
   ))
 }
   
