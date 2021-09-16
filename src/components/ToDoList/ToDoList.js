@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import { StyledToDoList } from './toDoList.style';
 import ToDo from '../ToDo/ToDo';
-import ToDoForm from '../ToDoForm';
+import ToDoInput from '../ToDoInput';
 
-function ToDoList() {
+const ToDoList = (props) => {
   const [toDos, setToDos] = useState([]);
 
   const addToDo = toDo => {
     if (!toDo.text || /^\s*$/.test(toDo.text)) {
       return
     }
-
     const newToDos = [toDo, ...toDos]
-
     setToDos(newToDos)
   }
 
@@ -25,24 +23,16 @@ function ToDoList() {
     })
     setToDos(updatedToDos)
   }
-  
 
-  // const isComplete = false;
-  
   return (
-
     <StyledToDoList className="list-body">
-
-      <ToDoForm onSubmit={addToDo}/>
-
+      <ToDoInput onSubmit={addToDo}/>
       {toDos.map((toDo, index) => (
         <ToDo
           isComplete={ toDo.isComplete == null ? false : toDo.isComplete }
           toDo={toDo}
           completeToDo={completeToDo}
           key={index}
-
-
         />
       ))}
       

@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './pages';
-// import TaskList from  "./styles/styles"
+
 
 function App() {
   return (

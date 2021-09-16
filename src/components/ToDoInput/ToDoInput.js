@@ -1,6 +1,13 @@
 import React, {useState} from 'react'
+import FormContainer from '../FormContainer';
+import SubmitButton from '../SubmitButton';
+import { StyledToDoInput } from './ToDoInput.style';
 
-const ToDoForm = (props) => {
+export interface Input {
+  input: string
+}
+
+const ToDoInput = (props) => {
   const [input, setInput] = useState('')
 
   const handleChange = event => {
@@ -17,21 +24,13 @@ const ToDoForm = (props) => {
     setInput("");
   };
 
-  const inputWidth = {
-    "width": "16em",
-    "border": '0',
-    "border-bottom": '1px solid #e5e5e5',
-    "color": 'black',
-  };
-  
   const onFocusChange = () => {
 
   };
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
-      <input 
-        style={inputWidth}
+    <form style={{display: 'flex'}} onSubmit={handleSubmit}>
+      <StyledToDoInput
         type='text' 
         placeholder="add new todo"
         value={input}
@@ -41,11 +40,10 @@ const ToDoForm = (props) => {
         onFocus={onFocusChange}
         maxLength={40}
         >
-      </input>
-      <button onSubmit={handleSubmit}>Add Task</button>
-      {/* <submitButton className='task-button' onSubmit={handleSubmit}>Add Task </submitButton> */}
+      </StyledToDoInput>
+      <SubmitButton onSubmit={handleSubmit}/>
     </form>
   )
 }
 
-export default ToDoForm
+export default ToDoInput
