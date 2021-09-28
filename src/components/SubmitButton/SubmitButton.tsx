@@ -1,10 +1,12 @@
-import React from 'react'
-import { StyledSubmitButton } from './SubmitButton.style'
+import React from "react";
+import { StyledSubmitButton } from "./SubmitButton.style";
 
-function SubmitButton() {
-  return (
-    <StyledSubmitButton/>
-  )
+interface SubmitButtonProps {
+  onSubmit: () => void;
 }
 
-export default SubmitButton
+function SubmitButton({ onSubmit }: SubmitButtonProps) {
+  return <StyledSubmitButton onSubmit={onSubmit} />;
+}
+
+export default SubmitButton;

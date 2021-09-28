@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSubmitButton = styled.input.attrs({
-  type: 'submit',
-  value: 'Add Task'
-})`
+export const StyledSubmitButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: space-around;
