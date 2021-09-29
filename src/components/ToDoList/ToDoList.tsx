@@ -1,59 +1,61 @@
-import React, { useState } from "react";
-import { StyledToDoList } from "./toDoList.style";
-import ToDo from "../ToDo/ToDo";
-import ToDoInput from "../ToDoInput";
+import React, { useState } from 'react'
+import { StyledToDoList } from './toDoList.style'
+import ToDo from '../ToDo/ToDo'
+import ToDoInput from '../ToDoInput'
 
+//TODO: MOVE TO TYPE
 interface IToDos {
-  id: number;
-  isComplete: boolean;
+  id: number
+  isCompleted: boolean
+  text: string
+  markToDo: ({ id: number }) => void
+  key: number
 }
 
 const ToDoList = () => {
-  const [toDos, setToDos] = useState<IToDos[]>([]);
+  const [toDos, setToDos] = useState<IToDos[]>([])
+
+  //TODO: MOVE TO UTILS
+  const isValidInput = (toDo) => {
+    const toDoSanitazed = toDo.text.trim()
+    return !!toDoSanitazed
+  }
 
   const addToDo = (toDo) => {
-    if (!toDo.text || /^\s*$/.test(toDo.text)) {
-      // console.log(toDo);
-      return;
+    if (!isValidInput(toDo)) {
+      return
     }
-    toDo.isComplete = false;
 
-    // validateToDo(toDo);
-    // debugger;
+    toDo.isCompleted = false
 
-    const newToDos = [toDo, ...toDos];
-    setToDos(newToDos);
-  };
+    const newToDos = [...toDos, toDo]
 
-  const validateToDo = (toDo) => {
-    if (!toDo.text || /^\s*$/.test(toDo.text)) {
-      return;
-    }
-  };
+    setToDos(newToDos)
+  }
 
   const markToDo = (id) => {
-    let updatedToDos = toDos.map((toDo) => {
+    const updatedToDos = toDos.map((toDo) => {
       if (toDo.id === id) {
-        toDo.isComplete = !toDo.isComplete;
+        toDo.isCompleted = !toDo.isCompleted
       }
-      return toDo;
-    });
-    setToDos(updatedToDos);
-  };
-
+      return toDo
+    })
+    setToDos(updatedToDos)
+  }
+  // prettier-ignore
   return (
     <StyledToDoList className="list-body">
       <ToDoInput onSubmit={addToDo} />
-      {toDos.map((toDo, index) => (
-        <ToDo
-          isComplete={toDo.isComplete}
-          toDo={toDo}
-          markToDo={markToDo}
-          key={index}
-        />
-      ))}
+      {toDos
+        .map((toDo, index) => (
+          <ToDo 
+            toDo={toDo} 
+            markToDo={markToDo}
+            key={index} />
+        ))
+        .reverse()}
     </StyledToDoList>
-  );
-};
+  )
+}
 
-export default ToDoList;
+export default ToDoList

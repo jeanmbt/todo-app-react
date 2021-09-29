@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { StyledToDoInput } from "./ToDoInput.style";
+import React, { useState } from 'react'
+import { StyledToDoInput } from './ToDoInput.style'
 
 export interface ToDoInputProps {
-  onSubmit: ({ id: number, text: string }) => void;
+  onSubmit: ({ id: number, text: string }) => void
 }
 
 const ToDoInput = (props: ToDoInputProps) => {
-  const { onSubmit } = props;
-  const [input, setInput] = useState("");
+  const { onSubmit } = props
+  const [input, setInput] = useState('')
 
   const handleChange = (event) => {
-    setInput(event.target.value);
-  };
+    setInput(event.target.value)
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input,
-    });
-    setInput("");
-  };
+    })
+    setInput('')
+  }
 
-  const onFocusChange = () => {};
+  const onFocusChange = () => {}
 
   return (
-    <form style={{ display: "flex" }} onSubmit={handleSubmit}>
+    <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
       <StyledToDoInput
         type="text"
         placeholder="add new todo"
@@ -38,7 +38,7 @@ const ToDoInput = (props: ToDoInputProps) => {
       ></StyledToDoInput>
       <button onSubmit={handleSubmit}>Add Item</button>
     </form>
-  );
-};
+  )
+}
 
-export default ToDoInput;
+export default ToDoInput
