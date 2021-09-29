@@ -4,7 +4,7 @@ import { Page, Title } from "../styles/styles";
 
 function Home() {
   return (
-    <Page className="home">
+    <Page>
       <Title>Today's List</Title>
       <ToDoList />
     </Page>

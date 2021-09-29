@@ -13,13 +13,25 @@ const ToDoList = () => {
 
   const addToDo = (toDo) => {
     if (!toDo.text || /^\s*$/.test(toDo.text)) {
+      // console.log(toDo);
       return;
     }
+    toDo.isComplete = false;
+
+    // validateToDo(toDo);
+    // debugger;
+
     const newToDos = [toDo, ...toDos];
     setToDos(newToDos);
   };
 
-  const completeToDo = (id) => {
+  const validateToDo = (toDo) => {
+    if (!toDo.text || /^\s*$/.test(toDo.text)) {
+      return;
+    }
+  };
+
+  const markToDo = (id) => {
     let updatedToDos = toDos.map((toDo) => {
       if (toDo.id === id) {
         toDo.isComplete = !toDo.isComplete;
@@ -34,9 +46,9 @@ const ToDoList = () => {
       <ToDoInput onSubmit={addToDo} />
       {toDos.map((toDo, index) => (
         <ToDo
-          isComplete={toDo.isComplete == null ? false : toDo.isComplete}
+          isComplete={toDo.isComplete}
           toDo={toDo}
-          completeToDo={completeToDo}
+          markToDo={markToDo}
           key={index}
         />
       ))}

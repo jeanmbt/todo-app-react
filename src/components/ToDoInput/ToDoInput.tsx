@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import FormContainer from "../FormContainer";
-import SubmitButton from "../SubmitButton";
 import { StyledToDoInput } from "./ToDoInput.style";
 
 export interface ToDoInputProps {
@@ -34,7 +32,6 @@ const ToDoInput = (props: ToDoInputProps) => {
         placeholder="add new todo"
         value={input}
         name="text"
-        className="todo-input"
         onChange={handleChange}
         onFocus={onFocusChange}
         maxLength={40}
