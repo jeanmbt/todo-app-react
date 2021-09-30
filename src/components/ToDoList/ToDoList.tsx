@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { isValidElement, useState } from 'react'
 import { StyledToDoList } from './toDoList.style'
 import ToDo from '../ToDo/ToDo'
 import ToDoInput from '../ToDoInput'
+import { isValidInput } from '../../utils'
 
 //TODO: MOVE TO TYPE
 interface IToDos {
@@ -14,12 +15,6 @@ interface IToDos {
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState<IToDos[]>([])
-
-  //TODO: MOVE TO UTILS
-  const isValidInput = (toDo) => {
-    const toDoSanitazed = toDo.text.trim()
-    return !!toDoSanitazed
-  }
 
   const addToDo = (toDo) => {
     if (!isValidInput(toDo)) {
