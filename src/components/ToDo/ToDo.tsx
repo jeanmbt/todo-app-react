@@ -23,7 +23,7 @@ const ToDo = ({ toDo, markToDo }: IToDoProps) => {
 
   return (
     <StyledToDo onClick={() => markToDo(toDo.id)}>
-      {toDo.isCompleted ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+      {toDo.isMarked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
       {toDo.text}
     </StyledToDo>
   )

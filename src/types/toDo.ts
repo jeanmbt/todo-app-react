@@ -1,7 +1,7 @@
 export interface IToDoItem {
   id: number; 
   text: string; 
-  isCompleted: boolean; 
+  isMarked: boolean; 
   key: number
   markToDo: (id: number) => void;
 }
