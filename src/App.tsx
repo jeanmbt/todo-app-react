@@ -1,11 +1,9 @@
-import React from 'react';
-import Home from './pages';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import React from 'react'
+import Home from './pages'
 
-
-function App() {
-  return (
-    <Home/>
-  );
+const App = () => {
+  return <Home />
 }
 
-export default App;
+export default App

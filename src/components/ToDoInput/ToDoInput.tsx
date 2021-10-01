@@ -1,13 +1,11 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { useState } from 'react'
+import { IToDoInputProps } from '../../types/toDoInput'
 import { StyledToDoInput } from './ToDoInput.style'
 
-export interface ToDoInputProps {
-  onSubmit: ({ id: number, text: string }) => void
-}
-
-const ToDoInput = (props: ToDoInputProps) => {
+const ToDoInput = (props: IToDoInputProps) => {
   const { onSubmit } = props
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState<string>('')
 
   const handleChange = (event) => {
     setInput(event.target.value)
@@ -23,8 +21,6 @@ const ToDoInput = (props: ToDoInputProps) => {
     setInput('')
   }
 
-  const onFocusChange = () => {}
-
   return (
     <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
       <StyledToDoInput
@@ -33,7 +29,6 @@ const ToDoInput = (props: ToDoInputProps) => {
         value={input}
         name="text"
         onChange={handleChange}
-        onFocus={onFocusChange}
         maxLength={40}
       ></StyledToDoInput>
       <button onSubmit={handleSubmit}>Add Item</button>

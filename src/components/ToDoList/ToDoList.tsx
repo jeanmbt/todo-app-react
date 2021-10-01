@@ -1,17 +1,12 @@
-import React, { isValidElement, useState } from 'react'
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+// prettier-ignore
+
+import React, { useState } from 'react'
 import { StyledToDoList } from './toDoList.style'
 import ToDo from '../ToDo/ToDo'
 import ToDoInput from '../ToDoInput'
 import { isValidInput } from '../../utils'
-
-//TODO: MOVE TO TYPE
-interface IToDos {
-  id: number
-  isCompleted: boolean
-  text: string
-  markToDo: ({ id: number }) => void
-  key: number
-}
+import { IToDoItem as IToDos } from '../../types/toDo'
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState<IToDos[]>([])
@@ -37,16 +32,13 @@ const ToDoList = () => {
     })
     setToDos(updatedToDos)
   }
-  // prettier-ignore
+
   return (
-    <StyledToDoList className="list-body">
+    <StyledToDoList>
       <ToDoInput onSubmit={addToDo} />
       {toDos
         .map((toDo, index) => (
-          <ToDo 
-            toDo={toDo} 
-            markToDo={markToDo}
-            key={index} />
+          <ToDo toDo={toDo} markToDo={markToDo} key={index} />
         ))
         .reverse()}
     </StyledToDoList>
