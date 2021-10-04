@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
 import React, { useState } from 'react'
 import { StyledToDoList } from './toDoList.style'
 import ToDo from '../ToDo/ToDo'

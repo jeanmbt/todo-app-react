@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-// prettier-ignore
-
 import React, { useState } from 'react'
 import { StyledToDo } from './ToDo.style'
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'

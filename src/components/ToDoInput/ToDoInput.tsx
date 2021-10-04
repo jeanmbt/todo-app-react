@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { useState } from 'react'
 import { IToDoInputProps } from '../../types/toDoInput'
 import { StyledToDoInput } from './ToDoInput.style'
