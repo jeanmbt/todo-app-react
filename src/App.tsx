@@ -1,17 +1,18 @@
-import React from 'react';
-import TaskList from './components/TaskList';
-import { Title, Page, StyledTaskList } from "./styles/styles";
-// import TaskList from  "./styles/styles"
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-function App() {
+import Home from './pages/home'
+import NotFound from './pages/notFound/'
+
+const App = () => {
   return (
-    <Page>
-      <Title>Title</Title>
-      <StyledTaskList/>
-
-      
-    </Page>
-  );
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
