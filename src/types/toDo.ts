@@ -5,11 +5,11 @@ export interface IToDoItem {
   key: number
   markToDo: (id: number) => void;
   updateToDo: (toDoId: number | null, newValue: string) => void;
-
+  removeToDo: (id: number) => void;
 }
 export interface IToDoProps {
   toDo: IToDoItem;
   markToDo: (id: number) => void;
   updateToDo: (toDoId: number | null, newValue: string) => void;
-
+  removeToDo: (id: number) => void;
 }
