@@ -30,7 +30,7 @@ const ToDo = ({
   })
 
   const submitUpdate = (value) => {
-    updateToDo(edit!.id, value)
+    updateToDo(edit.id, value)
     setEdit({
       id: null,
       value: '',
