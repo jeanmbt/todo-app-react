@@ -21,7 +21,7 @@ const ToDo = ({
   toDo,
   markToDo,
   updateToDo,
-  removeToDo
+
 }: IToDoProps) => {
 
   const [edit, setEdit] = useState<IEdit>({
@@ -54,8 +54,7 @@ const ToDo = ({
       )}
       {toDo.text}
 
-      <MdDelete style={{color: "red"}} onClick={() =>console.log(`click${toDo.id}`) } />
-      <MdDelete onClick={() => removeToDo(toDo.id)} />
+
       <MdModeEdit onClick={() => setEdit({id: toDo.id, value: toDo.text})}/>
     </StyledToDo>
   )

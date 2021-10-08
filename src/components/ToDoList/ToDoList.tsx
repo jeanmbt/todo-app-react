@@ -42,12 +42,6 @@ const ToDoList = () => {
     setToDos(updatedToDos)
   }
 
-  const removeToDo = (id) => {
-    const removedToDos = [...toDos].filter((toDo) => toDo.id !== id)
-
-    setToDos(removedToDos)
-  }
-
   return (
     <StyledToDoList>
       <ToDoInput onSubmit={addToDo} />
@@ -58,7 +52,6 @@ const ToDoList = () => {
             key={index}
             markToDo={markToDo}
             updateToDo={updateToDo}
-            removeToDo={removeToDo}
           />
         ))
         .reverse()}
