@@ -9,13 +9,18 @@ import {
 import ToDoInput from '../ToDoInput'
 import { IToDoProps } from '../../types/toDo'
 import { IEdit } from '../../types/edit'
+import { CheckBox, ToDoButtons, Wrapper } from '../../styles/styles'
 
-const divStyle = {
+const checkBoxStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   marginRight: '0.5em',
 }
+const iconStyle = {
+  margin: '0.2em',
+}
+
 // prettier-ignore
 const ToDo = ({
   toDo,
@@ -42,22 +47,26 @@ const ToDo = ({
   }
 
   return (
-    <StyledToDo onClick={() => markToDo(toDo.id)}>
-      {toDo.isMarked ? (
-        <div style={divStyle}>
-          <MdCheckBox />
+    <Wrapper style={{display:"flex"}}>
+      <StyledToDo onClick={() => markToDo(toDo.id)}>
+        {toDo.isMarked ? (
+          <CheckBox>
+            <MdCheckBox />
+          </CheckBox>
+        ) : (
+          <CheckBox>
+            <MdCheckBoxOutlineBlank />
+          </CheckBox>
+        )}
+        <div style={{maxWidth: "fit-content"}}>
+          {toDo.text}
         </div>
-      ) : (
-        <div style={divStyle}>
-          <MdCheckBoxOutlineBlank />
-        </div>
-      )}
-      {toDo.text}
-
-      {/* <MdDelete style={{color: "red"}} onClick={() =>console.log(`click${toDo.id}`) } /> */}
-      <MdDelete onClick={() => removeToDo(toDo.id)} />
-      <MdModeEdit onClick={() => setEdit({id: toDo.id, value: toDo.text})}/>
-    </StyledToDo>
+      </StyledToDo>
+      <ToDoButtons>
+        <MdModeEdit className="icon" style={iconStyle} onClick={() => setEdit({id: toDo.id, value: toDo.text})}/>
+        <MdDelete className="icon" style={iconStyle} onClick={() => removeToDo(toDo.id)} />
+      </ToDoButtons>
+    </Wrapper>
   )
 }
 
