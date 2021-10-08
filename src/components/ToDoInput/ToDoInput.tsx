@@ -3,7 +3,7 @@ import { IToDoInputProps } from '../../types/toDoInput'
 import { StyledToDoInput } from './ToDoInput.style'
 
 const ToDoInput = (props: IToDoInputProps) => {
-  const { onSubmit } = props
+  const { onSubmit, edit } = props
   const [input, setInput] = useState<string>('')
 
   const handleChange = (event) => {
@@ -30,7 +30,11 @@ const ToDoInput = (props: IToDoInputProps) => {
         onChange={handleChange}
         maxLength={40}
       ></StyledToDoInput>
-      <button onSubmit={handleSubmit}>Add Item</button>
+      {edit ? (
+        <button onSubmit={handleSubmit}> Edit Item</button>
+      ) : (
+        <button onSubmit={handleSubmit}>Add Item</button>
+      )}
     </form>
   )
 }
