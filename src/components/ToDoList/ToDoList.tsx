@@ -20,6 +20,18 @@ const ToDoList = () => {
     setToDos(newToDos)
   }
 
+  const updateToDo = (todoId, newValue) => {
+    if (!isValidInput(newValue)) {
+      return
+    }
+
+    const previousToDos = toDos.map((item) =>
+      item.id === todoId ? newValue : item
+    )
+
+    setToDos(previousToDos)
+  }
+
   const markToDo = (id) => {
     const updatedToDos = toDos.map((toDo) => {
       if (toDo.id === id) {
@@ -35,7 +47,12 @@ const ToDoList = () => {
       <ToDoInput onSubmit={addToDo} />
       {toDos
         .map((toDo, index) => (
-          <ToDo toDo={toDo} markToDo={markToDo} key={index} />
+          <ToDo
+            toDo={toDo}
+            key={index}
+            markToDo={markToDo}
+            updateToDo={updateToDo}
+          />
         ))
         .reverse()}
     </StyledToDoList>

@@ -1,3 +1,3 @@
-import notFound from './notFound';
+import notFound from './notFound'
 
-export default notFound 
+export default notFound
