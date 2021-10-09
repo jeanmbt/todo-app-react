@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledToDo = styled.div`
   display: flex;
@@ -8,5 +8,4 @@ export const StyledToDo = styled.div`
   margin: 0.5em 0.5em 0.5em 0;
   padding: 0.2em 0.2em 0.2em 0;
   overflow-wrap: anywhere;
-`; 
-
+`
