@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Button, InputWrapper, Wrapper } from '../../styles/styles'
 import { IToDoInputProps } from '../../types/toDoInput'
 import { StyledToDoInput } from './ToDoInput.style'
 
@@ -22,41 +21,21 @@ const ToDoInput = (props: IToDoInputProps) => {
   }
 
   return (
-    <InputWrapper>
-      <form onSubmit={handleSubmit}>
-        {edit ? (
-          <Wrapper>
-            <StyledToDoInput
-              type="text"
-              placeholder="edit todo"
-              value={input}
-              name="text"
-              onChange={handleChange}
-              maxLength={40}
-            />
-
-            <Button onClick={handleSubmit} onSubmit={handleSubmit}>
-              Edit to-do
-            </Button>
-          </Wrapper>
-        ) : (
-          <Wrapper>
-            <StyledToDoInput
-              type="text"
-              placeholder="add new todo"
-              value={input}
-              name="text"
-              onChange={handleChange}
-              maxLength={40}
-            />
-
-            <Button onClick={handleSubmit} onSubmit={handleSubmit}>
-              Add to-do
-            </Button>
-          </Wrapper>
-        )}
-      </form>
-    </InputWrapper>
+    <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
+      <StyledToDoInput
+        type="text"
+        placeholder="add new todo"
+        value={input}
+        name="text"
+        onChange={handleChange}
+        maxLength={40}
+      ></StyledToDoInput>
+      {edit ? (
+        <button onSubmit={handleSubmit}> Edit Item</button>
+      ) : (
+        <button onSubmit={handleSubmit}>Add Item</button>
+      )}
+    </form>
   )
 }
 

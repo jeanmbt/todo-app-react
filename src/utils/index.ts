@@ -1,1 +1,1 @@
-export * from "./isValidInput"
+export * from './isValidInput'

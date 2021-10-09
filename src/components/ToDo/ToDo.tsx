@@ -1,41 +1,25 @@
 import React, { useState } from 'react'
 import { StyledToDo } from './ToDo.style'
-import {
-  MdCheckBox,
-  MdCheckBoxOutlineBlank,
-  MdModeEdit,
-  MdDelete,
-} from 'react-icons/md'
+import { MdCheckBox, MdCheckBoxOutlineBlank, MdModeEdit } from 'react-icons/md'
 import ToDoInput from '../ToDoInput'
 import { IToDoProps } from '../../types/toDo'
 import { IEdit } from '../../types/edit'
-import { CheckBox, ToDoButtons, Wrapper } from '../../styles/styles'
 
-const checkBoxStyle = {
+const divStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   marginRight: '0.5em',
 }
-const iconStyle = {
-  margin: '0.2em',
-}
 
-// prettier-ignore
-const ToDo = ({
-  toDo,
-  markToDo,
-  updateToDo,
-  removeToDo
-}: IToDoProps) => {
-
+const ToDo = ({ toDo, markToDo, updateToDo }: IToDoProps) => {
   const [edit, setEdit] = useState<IEdit>({
     id: null,
     value: '',
   })
 
   const submitUpdate = (value) => {
-    updateToDo(edit!.id, value)
+    updateToDo(edit.id, value)
     setEdit({
       id: null,
       value: '',
@@ -47,26 +31,20 @@ const ToDo = ({
   }
 
   return (
-    <Wrapper style={{display:"flex"}}>
-      <StyledToDo onClick={() => markToDo(toDo.id)}>
-        {toDo.isMarked ? (
-          <CheckBox>
-            <MdCheckBox />
-          </CheckBox>
-        ) : (
-          <CheckBox>
-            <MdCheckBoxOutlineBlank />
-          </CheckBox>
-        )}
-        <div style={{maxWidth: "fit-content"}}>
-          {toDo.text}
+    <StyledToDo onClick={() => markToDo(toDo.id)}>
+      {toDo.isMarked ? (
+        <div style={divStyle}>
+          <MdCheckBox />
         </div>
-      </StyledToDo>
-      <ToDoButtons>
-        <MdModeEdit className="icon" style={iconStyle} onClick={() => setEdit({id: toDo.id, value: toDo.text})}/>
-        <MdDelete className="icon" style={iconStyle} onClick={() => removeToDo(toDo.id)} />
-      </ToDoButtons>
-    </Wrapper>
+      ) : (
+        <div style={divStyle}>
+          <MdCheckBoxOutlineBlank />
+        </div>
+      )}
+      {toDo.text}
+
+      <MdModeEdit onClick={() => setEdit({ id: toDo.id, value: toDo.text })} />
+    </StyledToDo>
   )
 }
 
