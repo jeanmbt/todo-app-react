@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { StyledToDo } from './ToDo.style'
-import { MdCheckBox, MdCheckBoxOutlineBlank, MdModeEdit } from 'react-icons/md'
+import {
+  MdCheckBox,
+  MdCheckBoxOutlineBlank,
+  MdModeEdit,
+  MdDelete,
+} from 'react-icons/md'
 import ToDoInput from '../ToDoInput'
 import { IToDoProps } from '../../types/toDo'
 import { IEdit } from '../../types/edit'
@@ -12,7 +17,7 @@ const divStyle = {
   marginRight: '0.5em',
 }
 
-const ToDo = ({ toDo, markToDo, updateToDo }: IToDoProps) => {
+const ToDo = ({ toDo, markToDo, updateToDo, removeToDo }: IToDoProps) => {
   const [edit, setEdit] = useState<IEdit>({
     id: null,
     value: '',
@@ -43,6 +48,7 @@ const ToDo = ({ toDo, markToDo, updateToDo }: IToDoProps) => {
       )}
       {toDo.text}
 
+      <MdDelete onClick={() => removeToDo(toDo.id)} />
       <MdModeEdit onClick={() => setEdit({ id: toDo.id, value: toDo.text })} />
     </StyledToDo>
   )
