@@ -17,6 +17,7 @@ const iconStyle = {
 
 const ToDo = ({ toDo, markToDo, updateToDo, removeToDo }: IToDoProps) => {
   const [edit, setEdit] = useState<IEdit>({
+    id: null,
     value: '',
   })
 

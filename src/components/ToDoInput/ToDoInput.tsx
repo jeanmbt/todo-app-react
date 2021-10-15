@@ -11,7 +11,7 @@ const ToDoInput = (props: IToDoInputProps) => {
     setInput(event.target.value)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmitAdd = (event) => {
     event.preventDefault()
 
     onSubmit({
@@ -21,9 +21,18 @@ const ToDoInput = (props: IToDoInputProps) => {
     setInput('')
   }
 
+  const handleSubmitEdit = (event) => {
+    event.preventDefault()
+
+    onSubmit({
+      id: edit?.id,
+      text: input,
+    })
+    setInput('')
+  }
   return (
     <InputWrapper>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitEdit}>
         {edit ? (
           <Wrapper>
             <StyledToDoInput
@@ -35,7 +44,7 @@ const ToDoInput = (props: IToDoInputProps) => {
               maxLength={40}
               required
             />
-            <Button onClick={handleSubmit} onSubmit={handleSubmit}>
+            <Button onClick={handleSubmitEdit} onSubmit={handleSubmitEdit}>
               Edit to-do
             </Button>
           </Wrapper>
@@ -51,7 +60,7 @@ const ToDoInput = (props: IToDoInputProps) => {
               maxLength={40}
               required
             />
-            <Button onClick={handleSubmit} onSubmit={handleSubmit}>
+            <Button onClick={handleSubmitAdd} onSubmit={handleSubmitAdd}>
               Add to-do
             </Button>
           </Wrapper>
