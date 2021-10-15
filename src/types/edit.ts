@@ -1,4 +1,4 @@
 export interface IEdit {
-  id: number | null
+  id?: number | null
   value: string
 }

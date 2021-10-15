@@ -31,25 +31,26 @@ const ToDoInput = (props: IToDoInputProps) => {
               placeholder="edit todo"
               value={input}
               name="text"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
               maxLength={40}
+              required
             />
-
             <Button onClick={handleSubmit} onSubmit={handleSubmit}>
               Edit to-do
             </Button>
           </Wrapper>
         ) : (
+          // Header
           <Wrapper>
             <StyledToDoInput
               type="text"
               placeholder="add new todo"
               value={input}
               name="text"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
               maxLength={40}
+              required
             />
-
             <Button onClick={handleSubmit} onSubmit={handleSubmit}>
               Add to-do
             </Button>

@@ -9,25 +9,27 @@ const ToDoList = () => {
   const [toDos, setToDos] = useState<IToDoItem[]>([])
 
   const addToDo = (toDo) => {
-    if (!isValidInput(toDo)) {
+    if (!isValidInput(toDo.text)) {
       return
     }
 
-    toDo.isMarked = false
-
-    const newToDos = [...toDos, toDo]
+    const newToDos = [...toDos, { ...toDo, isMarked: false }]
 
     setToDos(newToDos)
   }
 
-  const updateToDo = (todoId, newValue) => {
-    if (!isValidInput(newValue)) {
+  const updateToDo = (todoId: number, newValueText: string) => {
+    if (!isValidInput(newValueText)) {
       return
     }
 
-    const previousToDos = toDos.map((item) =>
-      item.id === todoId ? newValue : item
-    )
+    const previousToDos = toDos.map((item) => {
+      if (item.id === todoId) {
+        item.text = newValueText
+      }
+
+      return item
+    })
 
     setToDos(previousToDos)
   }
@@ -43,7 +45,7 @@ const ToDoList = () => {
   }
 
   const removeToDo = (id) => {
-    const removedToDos = [...toDos].filter((toDo) => toDo.id !== id)
+    const removedToDos = toDos.filter((toDo) => toDo.id !== id)
 
     setToDos(removedToDos)
   }
