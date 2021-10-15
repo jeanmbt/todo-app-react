@@ -9,12 +9,10 @@ import {
 import ToDoInput from '../ToDoInput'
 import { IToDoProps } from '../../types/toDo'
 import { IEdit } from '../../types/edit'
+import { CheckBox, ToDoButtons, Wrapper } from '../../styles/styles'
 
-const divStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginRight: '0.5em',
+const iconStyle = {
+  margin: '0.2em',
 }
 
 const ToDo = ({ toDo, markToDo, updateToDo, removeToDo }: IToDoProps) => {
@@ -36,21 +34,32 @@ const ToDo = ({ toDo, markToDo, updateToDo, removeToDo }: IToDoProps) => {
   }
 
   return (
-    <StyledToDo onClick={() => markToDo(toDo.id)}>
-      {toDo.isMarked ? (
-        <div style={divStyle}>
-          <MdCheckBox />
-        </div>
-      ) : (
-        <div style={divStyle}>
-          <MdCheckBoxOutlineBlank />
-        </div>
-      )}
-      {toDo.text}
-
-      <MdDelete onClick={() => removeToDo(toDo.id)} />
-      <MdModeEdit onClick={() => setEdit({ id: toDo.id, value: toDo.text })} />
-    </StyledToDo>
+    <Wrapper style={{ display: 'flex' }}>
+      <StyledToDo onClick={() => markToDo(toDo.id)}>
+        {toDo.isMarked ? (
+          <CheckBox>
+            <MdCheckBox />
+          </CheckBox>
+        ) : (
+          <CheckBox>
+            <MdCheckBoxOutlineBlank />
+          </CheckBox>
+        )}
+        <div style={{ maxWidth: 'fit-content' }}>{toDo.text}</div>
+      </StyledToDo>
+      <ToDoButtons>
+        <MdModeEdit
+          className="icon"
+          style={iconStyle}
+          onClick={() => setEdit({ id: toDo.id, value: toDo.text })}
+        />
+        <MdDelete
+          className="icon"
+          style={iconStyle}
+          onClick={() => removeToDo(toDo.id)}
+        />
+      </ToDoButtons>
+    </Wrapper>
   )
 }
 
