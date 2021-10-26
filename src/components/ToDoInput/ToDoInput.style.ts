@@ -1,9 +1,13 @@
-import styled from 'styled-components';
-import theme from '../../styles/theme';
+import styled from 'styled-components'
+import theme from '../../styles/theme'
 
 export const StyledToDoInput = styled.input`
-width: "16em";
-border: '0';
-border-bottom: '1px solid' ${theme.colors.grey};
-color: 'black'; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid ${theme.colors.grey};
+  flex: wrap;
+  width: 100%;
+
 `; 

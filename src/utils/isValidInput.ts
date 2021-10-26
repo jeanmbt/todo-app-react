@@ -1,4 +1,4 @@
-export const isValidInput = (toDo) => {
-  const toDoSanitazed = toDo.text.trim()
+export const isValidInput = (text) => {
+  const toDoSanitazed = text.trim()
   return !!toDoSanitazed
 }

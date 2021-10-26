@@ -7,7 +7,7 @@ const NotFound = () => {
     <Page>
       <h1>Page not found</h1>
       {/* TODO: Link styled as a button */}
-      <Link to="/">Go back</Link>
+      <Link to="/todo-app-react">Go back</Link>
     </Page>
   )
 }
