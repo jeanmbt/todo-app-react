@@ -37,7 +37,7 @@ const ToDoInput = (props: IToDoInputProps) => {
           <Wrapper>
             <StyledToDoInput
               type="text"
-              placeholder="edit todo"
+              placeholder={edit.value}
               value={input}
               name="text"
               onChange={(e) => handleChange(e)}
