@@ -1,3 +1,3 @@
-import ToDoList from './ToDoList';
+import ToDoList from './ToDoList'
 
 export default ToDoList

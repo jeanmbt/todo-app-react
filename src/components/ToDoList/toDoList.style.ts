@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledToDoList = styled.div`
-display: flex;
+display: grid;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-width: 50%;
+grid-template-columns: 120%;
 `; 

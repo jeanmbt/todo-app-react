@@ -1,8 +1,8 @@
-import React from "react";
-import { StyledTitle } from "./Title.style";
+import React from 'react'
+import { StyledTitle } from './Title.style'
 
 function Title() {
-  return <StyledTitle />;
+  return <StyledTitle />
 }
 
-export default Title;
+export default Title
