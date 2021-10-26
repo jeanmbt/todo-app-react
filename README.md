@@ -10,6 +10,6 @@ https://jeanmbt.github.io/todo-app-react/
 - JavaScript
 - TypeScript
 - React
-- CSS
+- Styled Components
 
 
