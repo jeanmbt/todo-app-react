@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import { StyledTitle } from './Title.style'
 import ContentEditable from 'react-contenteditable'
 
 const Title = () => {
-  const [html, setHtml] = useState('')
+  const html = useRef('')
 
   const handleChange = (e) => {
-    setHtml(html)
+    html.current = e.target.value
   }
 
   return (
     <StyledTitle>
       <ContentEditable
-        html={html == '' ? 'Click to add list title' : html}
+        html={(html.current = 'Click to add a list title')}
         onChange={handleChange}
       ></ContentEditable>
     </StyledTitle>
