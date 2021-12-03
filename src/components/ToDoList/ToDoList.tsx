@@ -5,6 +5,7 @@ import ToDoInput from '../ToDoInput'
 import { isValidInput } from '../../utils/isValidInput'
 import setId from '../../utils/setId'
 import { IToDoItem } from '../../types/toDo'
+import Title from '../Title'
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState<IToDoItem[]>([])

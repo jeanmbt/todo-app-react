@@ -1,12 +1,13 @@
 import React from 'react'
+import Title from '../../components/Title'
 import ToDoList from '../../components/ToDoList'
 
-import { Page, Title } from '../../styles/styles'
+import { Page } from '../../styles/styles'
 
 const Home = () => {
   return (
     <Page>
-      <Title>Today's List</Title>
+      <Title />
       <ToDoList />
     </Page>
   )
