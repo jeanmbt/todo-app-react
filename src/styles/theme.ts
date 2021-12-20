@@ -1,3 +1,5 @@
+import React from "react"
+
 const theme = {
   colors: {
     primary: "#280003",
@@ -8,6 +10,7 @@ const theme = {
     grey: "#e5e5e5",
     background: "#e6ebe9",
   },
+
 }
 
 export default theme
