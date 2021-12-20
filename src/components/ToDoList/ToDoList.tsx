@@ -13,7 +13,10 @@ const ToDoList = () => {
       return
     }
 
-    const newToDos = [...toDos, { ...toDo, isMarked: false }]
+    const newToDos = [
+      ...toDos,
+      { ...toDo, id: toDos.length + 1, isMarked: false },
+    ]
 
     setToDos(newToDos)
   }
