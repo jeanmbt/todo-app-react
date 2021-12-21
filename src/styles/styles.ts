@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import { lightTheme } from './themes/lightTheme'
-import { darkTheme } from './themes/darkTheme'
 
 // TODO: Put important styled components in components directory
 
 export const Page = styled.div`
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +32,7 @@ export const Wrapper = styled.div`
   align-self: flex-start;
   &:hover {
     transition: 0.5s;
-    background-color: ${lightTheme.colors.grey};
+    background-color: ${props => props.theme.colors.secondary};
   }
 `
 
@@ -43,7 +42,7 @@ export const InputWrapper = styled.div`
   border: 1px solid white;
   border-radius: 5px;
   &:hover {
-    border: 1px solid ${lightTheme.colors.black};
+    border: 1px solid ${props => props.theme.colors.grey};
     border-radius: 5px;
   }
 `
@@ -59,18 +58,18 @@ export const ToDoButtons = styled.div`
 `
 
 export const Button = styled.div`
-  background-color: ${lightTheme.colors.black};
-  color: ${lightTheme.colors.white};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
   text-align: center;
   padding: 5px 15px;
   border-radius: 0 5px 5px 0;
   outline: 0;
   cursor: pointer;
   white-space: nowrap;
-  border: 1px solid transparent;
+  border: 1px solid ${props => props.theme.colors.secondary};
   &:hover {
     box-shadow: 1px 2px 2px black;
-    background-color: ${lightTheme.colors.secondary};
+    background-color: ${props => props.theme.colors.secondary};
     border: 1px solid transparent;
   }
 `
