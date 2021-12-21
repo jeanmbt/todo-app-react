@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import theme from './theme'
+import { lightTheme } from './themes/lightTheme'
+import { darkTheme } from './themes/darkTheme'
 
 // TODO: Put important styled components in components directory
 
@@ -32,7 +33,7 @@ export const Wrapper = styled.div`
   align-self: flex-start;
   &:hover {
     transition: 0.5s;
-    background-color: ${theme.colors.grey};
+    background-color: ${lightTheme.colors.grey};
   }
 `
 
@@ -42,7 +43,7 @@ export const InputWrapper = styled.div`
   border: 1px solid white;
   border-radius: 5px;
   &:hover {
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${lightTheme.colors.black};
     border-radius: 5px;
   }
 `
@@ -58,8 +59,8 @@ export const ToDoButtons = styled.div`
 `
 
 export const Button = styled.div`
-  background-color: ${theme.colors.black};
-  color: ${theme.colors.white};
+  background-color: ${lightTheme.colors.black};
+  color: ${lightTheme.colors.white};
   text-align: center;
   padding: 5px 15px;
   border-radius: 0 5px 5px 0;
@@ -69,7 +70,7 @@ export const Button = styled.div`
   border: 1px solid transparent;
   &:hover {
     box-shadow: 1px 2px 2px black;
-    background-color: ${theme.colors.secondary};
+    background-color: ${lightTheme.colors.secondary};
     border: 1px solid transparent;
   }
 `

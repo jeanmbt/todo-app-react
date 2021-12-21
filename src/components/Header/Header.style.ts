@@ -10,7 +10,7 @@ export const StyledHeader = styled.div`
   justify-content: space-around;
   align-items: center;
   color: white;
-& & > div {
-  width: 100vw;
+  & > div {
+    width: 100vw;
 }
   `

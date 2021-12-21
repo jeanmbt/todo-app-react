@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
 import Home from './pages/home'
 import NotFound from './pages/notFound/'
-import theme from './styles/theme'
+import { lightTheme } from './styles/themes/lightTheme'
+import { darkTheme } from './styles/themes/darkTheme'
+import { ThemeContext } from 'styled-components'
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <Router>
         <Switch>
           <Route exact path={['/todo-app-react/', '/']} component={Home} />

@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 import Header from '../../components/Header'
 import Title from '../../components/Title'
 import ToDoList from '../../components/ToDoList'
 
 import { Page } from '../../styles/styles'
+import { lightTheme } from '../../styles/themes/lightTheme'
+import { darkTheme } from '../../styles/themes/darkTheme'
 
 const Home = () => {
+  const [theme, setTheme] = useState(lightTheme)
+
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? darkTheme : lightTheme)
+    console.log('toogled')
+    console.log(theme)
+  }
   return (
-    <Page>
-      <Header />
-      <Title />
-      <ToDoList />
-    </Page>
+    <ThemeProvider theme={theme}>
+      <Page>
+        <Header toggleTheme={toggleTheme} />
+        <Title />
+        <ToDoList />
+      </Page>
+    </ThemeProvider>
   )
 }
 
