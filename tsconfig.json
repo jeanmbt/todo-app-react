@@ -17,5 +17,8 @@
     "jsx": "react-jsx",
     "noImplicitAny": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "files": [
+    "src/types/theme.ts"
+  ]
 }
