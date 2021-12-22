@@ -58,8 +58,8 @@ export const ToDoButtons = styled.div`
 `
 
 export const Button = styled.div`
-  background-color: ${props => props.theme.colors.background};
-  color: ${props => props.theme.colors.text};
+  background-color: ${props => props.theme.colors.secondary};
+  color: white;
   text-align: center;
   padding: 5px 15px;
   border-radius: 0 5px 5px 0;

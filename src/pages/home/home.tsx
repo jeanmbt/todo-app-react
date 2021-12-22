@@ -7,6 +7,7 @@ import ToDoList from '../../components/ToDoList'
 import { Page } from '../../styles/styles'
 import { lightTheme } from '../../styles/themes/lightTheme'
 import { darkTheme } from '../../styles/themes/darkTheme'
+import GlobalStyle from '../../styles/global'
 
 const Home = () => {
   const [theme, setTheme] = useState(lightTheme)
@@ -18,6 +19,7 @@ const Home = () => {
   }
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Page>
         <Header toggleTheme={toggleTheme} />
         <Title />
