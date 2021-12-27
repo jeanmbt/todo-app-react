@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { StyledToDoList } from './toDoList.style'
 import ToDo from '../ToDo/ToDo'
 import ToDoInput from '../ToDoInput'
-import { isValidInput } from '../../utils/isValidInput'
-import setId from '../../utils/setId'
+import { isValidInput } from '../../utils'
 import { IToDoItem } from '../../types/toDo'
 
 const ToDoList = () => {
@@ -16,11 +15,7 @@ const ToDoList = () => {
 
     const newToDos = [
       ...toDos,
-      {
-        ...toDo,
-        id: setId(toDos),
-        isMarked: false,
-      },
+      { ...toDo, id: toDos.length + 1, isMarked: false },
     ]
 
     setToDos(newToDos)
