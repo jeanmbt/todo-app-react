@@ -30,6 +30,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-self: flex-start;
+  border-radius: 5px;
   &:hover {
     transition: 0.5s;
     background-color: ${props => props.theme.colors.secondary};
@@ -42,6 +43,7 @@ export const InputWrapper = styled.div`
   border: 1px solid white;
   border-radius: 5px;
   &:hover {
+    box-shadow: 1px 2px 2px ${props => props.theme.colors.grey};
     border: 1px solid ${props => props.theme.colors.grey};
     border-radius: 5px;
   }
@@ -52,6 +54,7 @@ export const ToDoButtons = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 0%;
+  color: ${props => props.theme.colors.white};
   ${Wrapper}:hover & {
     opacity: 1;
   }
@@ -68,8 +71,8 @@ export const Button = styled.div`
   white-space: nowrap;
   border: 1px solid ${props => props.theme.colors.secondary};
   &:hover {
-    box-shadow: 1px 2px 2px black;
-    background-color: ${props => props.theme.colors.secondary};
+    box-shadow: 1px 2px 2px ${props => props.theme.colors.grey};
+    background-color: ${props => props.theme.colors.secondaryBright};
     border: 1px solid transparent;
   }
 `

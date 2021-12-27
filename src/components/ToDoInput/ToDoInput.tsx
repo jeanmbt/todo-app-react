@@ -39,7 +39,7 @@ const ToDoInput = (props: IToDoInputProps) => {
   }
   return (
     <InputWrapper>
-      <form onSubmit={handleSubmitEdit}>
+      <form onSubmit={handleSubmitEdit} style={{ border: 0 }}>
         {edit ? (
           <Wrapper>
             <StyledToDoInput

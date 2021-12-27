@@ -10,15 +10,27 @@ const Header = (props: any) => {
   return (
     <StyledHeader>
       <div>
-        TO DO
-        <Switch
-          onChange={toggleTheme}
-          checked={title === 'dark'}
-          checkedIcon={false}
-          uncheckedIcon={false}
-          offColor={colors.white}
-          onColor={colors.primary}
-        />
+        <b>TO DO</b>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '5em',
+          }}
+        >
+          {title === 'light' ? '☽  ' : '☀   '}
+
+          <Switch
+            onChange={toggleTheme}
+            checked={title === 'light'}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            offColor={colors.secondary}
+            offHandleColor={colors.secondaryBright}
+            onColor={colors.secondaryBright}
+          />
+        </div>
       </div>
     </StyledHeader>
   )

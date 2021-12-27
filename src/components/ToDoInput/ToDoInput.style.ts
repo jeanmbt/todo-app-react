@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 
-// import { useContext } from 'react';
-// import { darkTheme } from '../../styles/themes/darkTheme';
-import { lightTheme } from '../../styles/themes/lightTheme';
-// import { ThemeContext } from 'styled-components';
-
 // const { colors } = useContext(ThemeContext)
 
 export const StyledToDoInput = styled.input`
@@ -12,8 +7,11 @@ export const StyledToDoInput = styled.input`
   justify-content: center;
   align-items: center;
   border: 0;
-  border-bottom: 1px solid ${lightTheme.colors.grey};
+  border-bottom: 1px solid ${props => props.theme.colors.grey};
   flex: wrap;
   width: 100%;
-
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
+  padding: 0.5em;
+  
 `; 
