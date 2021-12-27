@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 import Header from '../../components/Header'
 import Title from '../../components/Title'

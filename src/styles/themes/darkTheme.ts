@@ -3,11 +3,12 @@ export const darkTheme = {
   colors: {
     primary: "#280003",
     secondary: "#c96645",
-    secondaryBright: "#ffb399",
+    secondaryBright: "#a35337",
     white: "#FFFFFF",
     black: "#17171a",
-    grey: "#e5e5e5",
+    grey: "#4a4341",
     background: "#280003",
     text: "#FFFFFF",
+    selection: "#a67b6c",
   }
 }
