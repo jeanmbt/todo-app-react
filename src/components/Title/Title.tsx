@@ -6,6 +6,7 @@ import { TitleWrapper } from '../../styles/styles'
 
 const Title = () => {
   const html = useRef('')
+  html.current = 'Add title'
   const [text, setText] = usePersistedState<any>('title', html)
 
   const handleChange = (e) => {
@@ -17,7 +18,7 @@ const Title = () => {
     <StyledTitle>
       <TitleWrapper>
         <ContentEditable
-          html={(html.current = 'Add Title')}
+          html={(html.current = text)}
           onChange={handleChange}
         ></ContentEditable>
       </TitleWrapper>
