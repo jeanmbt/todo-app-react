@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import Switch from 'react-switch'
 import { StyledHeader } from './Header.style'
 import { ThemeContext } from 'styled-components'

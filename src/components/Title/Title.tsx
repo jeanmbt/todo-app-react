@@ -5,9 +5,8 @@ import usePersistedState from '../../utils/usePersistedState'
 import { TitleWrapper } from '../../styles/styles'
 
 const Title = () => {
+  const [text, setText] = usePersistedState<any>('title', 'Add title')
   const html = useRef('')
-  html.current = 'Add title'
-  const [text, setText] = usePersistedState<any>('title', html)
 
   const handleChange = (e) => {
     html.current = e.target.value
