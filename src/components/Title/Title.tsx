@@ -5,7 +5,7 @@ import usePersistedState from '../../utils/usePersistedState'
 import { TitleWrapper } from '../../styles/styles'
 
 const Title = () => {
-  const html = useRef('Click to add a list title')
+  const html = useRef('')
   const [text, setText] = usePersistedState<any>('title', html)
 
   const handleChange = (e) => {
@@ -17,7 +17,7 @@ const Title = () => {
     <StyledTitle>
       <TitleWrapper>
         <ContentEditable
-          html={(html.current = text)}
+          html={(html.current = 'Add Title')}
           onChange={handleChange}
         ></ContentEditable>
       </TitleWrapper>
