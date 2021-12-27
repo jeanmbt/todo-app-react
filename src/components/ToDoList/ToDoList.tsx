@@ -4,9 +4,10 @@ import ToDo from '../ToDo/ToDo'
 import ToDoInput from '../ToDoInput'
 import { isValidInput } from '../../utils'
 import { IToDoItem } from '../../types/toDo'
+import usePersistedState from '../../utils/usePersistedState'
 
 const ToDoList = () => {
-  const [toDos, setToDos] = useState<IToDoItem[]>([])
+  const [toDos, setToDos] = usePersistedState<IToDoItem[]>('todos', [])
 
   const addToDo = (toDo) => {
     if (!isValidInput(toDo.text)) {
