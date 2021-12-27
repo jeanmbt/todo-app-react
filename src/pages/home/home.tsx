@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import React, { useState } from 'react'
+import { DefaultTheme, ThemeProvider } from 'styled-components'
 import Header from '../../components/Header'
 import Title from '../../components/Title'
 import ToDoList from '../../components/ToDoList'
+import usePersistedState from '../../utils/usePersistedState'
 
 import { Page } from '../../styles/styles'
 import { lightTheme } from '../../styles/themes/lightTheme'
@@ -10,7 +11,7 @@ import { darkTheme } from '../../styles/themes/darkTheme'
 import GlobalStyle from '../../styles/global'
 
 const Home = () => {
-  const [theme, setTheme] = useState(lightTheme)
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', lightTheme)
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? darkTheme : lightTheme)
