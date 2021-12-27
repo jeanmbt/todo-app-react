@@ -1,11 +1,10 @@
-import React, { useContext, useRef } from 'react'
+import { useRef } from 'react'
 import { StyledTitle } from './Title.style'
 import ContentEditable from 'react-contenteditable'
 import usePersistedState from '../../utils/usePersistedState'
-import { ThemeContext } from 'styled-components'
+import { TitleWrapper } from '../../styles/styles'
 
 const Title = () => {
-  const { colors } = useContext(ThemeContext)
   const html = useRef('Click to add a list title')
   const [text, setText] = usePersistedState<any>('title', html)
 
@@ -16,18 +15,12 @@ const Title = () => {
 
   return (
     <StyledTitle>
-      <div
-        style={{
-          borderBottom: `1px solid ${colors.secondary}`,
-          minWidth: '2em',
-          maxWidth: '80vw',
-        }}
-      >
+      <TitleWrapper>
         <ContentEditable
           html={(html.current = text)}
           onChange={handleChange}
         ></ContentEditable>
-      </div>
+      </TitleWrapper>
     </StyledTitle>
   )
 }

@@ -27,7 +27,7 @@ const Header = (props: IHeader) => {
             checked={title === 'light'}
             checkedIcon={false}
             uncheckedIcon={false}
-            offColor={colors.secondary}
+            offColor={colors.grey}
             offHandleColor={colors.secondaryBright}
             onColor={colors.secondaryBright}
           />

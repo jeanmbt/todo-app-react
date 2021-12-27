@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { StyledToDoList } from './toDoList.style'
 import ToDo from '../ToDo/ToDo'
 import ToDoInput from '../ToDoInput'

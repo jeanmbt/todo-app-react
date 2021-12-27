@@ -6,7 +6,7 @@ export const lightTheme = {
     secondaryBright: "#ffb399",
     white: "#FFFFFF",
     black: "#17171a",
-    grey: "#e5e5e5",
+    grey: "#4a4341",
     background: "#FFFFFF",
     text: "#280003",
   }
