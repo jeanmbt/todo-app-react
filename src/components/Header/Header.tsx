@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import Switch from 'react-switch'
 import { StyledHeader } from './Header.style'
 import { ThemeContext } from 'styled-components'
+import { IHeader } from '../../types/theme'
 
-const Header = (props: any) => {
+const Header = (props: IHeader) => {
   const { colors, title } = useContext(ThemeContext)
   const { toggleTheme } = props
 

@@ -15,3 +15,7 @@ declare module 'styled-components' {
     },
   }
 }
+
+export interface IHeader {
+  toggleTheme(): void;
+}
