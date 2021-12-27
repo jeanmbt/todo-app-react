@@ -9,5 +9,6 @@ export const darkTheme = {
     grey: "#4a4341",
     background: "#280003",
     text: "#FFFFFF",
+    selection: "#a67b6c",
   }
 }

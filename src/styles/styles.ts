@@ -41,10 +41,11 @@ export const InputWrapper = styled.div`
   margin-bottom: 1em;
   border: 1px solid ${props => props.theme.colors.background};
   border-radius: 5px;
+  background-color: ${props => props.theme.colors.background} ;
   &:hover {
     box-shadow: 1px 2px 2px ${props => props.theme.colors.secondary};
     border: 1px solid ${props => props.theme.colors.secondary};
-    background-color: ${props => props.theme.colors.secondaryBright};
+    background-color: ${props => props.theme.colors.background}
     input {
       transition: 0.3s;
       background-color: ${props => props.theme.colors.secondaryBright};

@@ -5,11 +5,12 @@ const GlobalStyle = createGlobalStyle`
     *:focus {
       outline: none;
       transition: 0.3s;
+      background-color: ${props => props.theme.colors.selection};
     }
   input {
     background: transparent;
     *:focus {
-      
+
     }
   }
   }
