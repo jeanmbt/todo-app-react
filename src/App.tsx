@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/todo-app-react/" component={Home} />
+        <Route exact path={['/todo-app-react/', '/']} component={Home} />
         <Route component={NotFound} />
       </Switch>
     </Router>

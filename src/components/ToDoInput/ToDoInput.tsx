@@ -3,7 +3,14 @@ import { Button, InputWrapper, Wrapper } from '../../styles/styles'
 import { IToDoInputProps } from '../../types/toDoInput'
 import { StyledToDoInput } from './ToDoInput.style'
 
+import { useContext } from 'react'
+import { darkTheme } from '../../styles/themes/darkTheme'
+import { lightTheme } from '../../styles/themes/lightTheme'
+import { ThemeContext } from 'styled-components'
+
 const ToDoInput = (props: IToDoInputProps) => {
+  const { colors } = useContext(ThemeContext)
+
   const { onSubmit, edit } = props
   const [input, setInput] = useState<string>('')
 
@@ -32,7 +39,7 @@ const ToDoInput = (props: IToDoInputProps) => {
   }
   return (
     <InputWrapper>
-      <form onSubmit={handleSubmitEdit}>
+      <form onSubmit={handleSubmitEdit} style={{ border: 0 }}>
         {edit ? (
           <Wrapper>
             <StyledToDoInput
