@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Home from './pages/home'
@@ -15,3 +16,4 @@ const App = () => {
 }
 
 export default App
+

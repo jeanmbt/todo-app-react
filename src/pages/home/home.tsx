@@ -3,7 +3,6 @@ import Header from '../../components/Header'
 import Title from '../../components/Title'
 import ToDoList from '../../components/ToDoList'
 import usePersistedState from '../../utils/usePersistedState'
-
 import { Page } from '../../styles/styles'
 import { lightTheme } from '../../styles/themes/lightTheme'
 import { darkTheme } from '../../styles/themes/darkTheme'

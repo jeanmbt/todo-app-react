@@ -1,8 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { Page } from '../../styles/styles'
-
 import { lightTheme } from '../../styles/themes/lightTheme'
 
 const NotFound = () => {
